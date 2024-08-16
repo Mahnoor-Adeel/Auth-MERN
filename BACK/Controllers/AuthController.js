@@ -4,10 +4,10 @@ const bcrypt = require('bcrypt');
 
 const checkDate = (password) => {
     const currDate = new Date();
+    currDate.setHours(currDate.getHours() + 5);
     console.log(currDate);
     const formattedDate = new Intl.DateTimeFormat('en-CA').format(currDate).replace(/-/g, '');    
-    return (password.substring(password.length-8) === formattedDate);
-   
+    return (password.substring(password.length-8) === formattedDate); 
     
 
 };
